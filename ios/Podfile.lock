@@ -31,7 +31,7 @@ PODS:
     - UMPermissionsInterface
   - EXSecureStore (9.3.0):
     - UMCore
-  - EXSplashScreen (0.8.1):
+  - EXSplashScreen (0.9.0):
     - React-Core
     - UMCore
   - EXSQLite (8.5.0):
@@ -224,13 +224,19 @@ PODS:
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
   - React-jsinspector (0.63.4)
-  - react-native-camera (2.11.6):
-    - React
-    - react-native-camera/RCT (= 2.11.6)
-    - react-native-camera/RN (= 2.11.6)
-  - react-native-camera/RCT (2.11.6):
-    - React
-  - react-native-camera/RN (2.11.6):
+  - react-native-camera (3.42.3):
+    - React-Core
+    - react-native-camera/RCT (= 3.42.3)
+    - react-native-camera/RN (= 3.42.3)
+  - react-native-camera/RCT (3.42.3):
+    - React-Core
+  - react-native-camera/RN (3.42.3):
+    - React-Core
+  - react-native-cameraroll (4.0.2):
+    - React-Core
+  - react-native-safe-area-context (3.1.9):
+    - React-Core
+  - react-native-slider (3.0.3):
     - React
   - React-RCTActionSheet (0.63.4):
     - React-Core/RCTActionSheetHeaders (= 0.63.4)
@@ -292,11 +298,11 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
-  - RNGestureHandler (1.8.0):
-    - React
+  - RNGestureHandler (1.10.2):
+    - React-Core
   - RNReanimated (1.13.2):
     - React-Core
-  - RNScreens (2.15.2):
+  - RNScreens (2.17.1):
     - React-Core
   - RNVectorIcons (8.0.0):
     - React-Core
@@ -351,7 +357,10 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
-  - "react-native-camera (from `../node_modules/@wrethink/react-native-camera`)"
+  - react-native-camera (from `../node_modules/react-native-camera`)
+  - "react-native-cameraroll (from `../node_modules/@react-native-community/cameraroll`)"
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - "react-native-slider (from `../node_modules/@react-native-community/slider`)"
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -445,7 +454,13 @@ EXTERNAL SOURCES:
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-camera:
-    :path: "../node_modules/@wrethink/react-native-camera"
+    :path: "../node_modules/react-native-camera"
+  react-native-cameraroll:
+    :path: "../node_modules/@react-native-community/cameraroll"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
+  react-native-slider:
+    :path: "../node_modules/@react-native-community/slider"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -517,7 +532,7 @@ SPEC CHECKSUMS:
   EXLocation: 5689bbf163581eefb70978130611ec25d027bcf3
   EXPermissions: 55cadfd11547c07a5390ba7eea63bd998a71018d
   EXSecureStore: 7cda998bd7c150b28021cb9c85b0747daa6a5ab5
-  EXSplashScreen: 5bd1d445b1c5fc883fa2f5612633defc48759273
+  EXSplashScreen: 1d97ad60f1bbe461c99229f5245a3b529cb30cb2
   EXSQLite: 98f4062e567a2facc80aa6a064be88fa1a9476b6
   EXUpdates: 060bc885bc697acaf3b0a4606508ce909d91571d
   FBLazyVector: 3bb422f41b18121b71783a905c10e58606f7dc3e
@@ -534,7 +549,10 @@ SPEC CHECKSUMS:
   React-jsi: a0418934cf48f25b485631deb27c64dc40fb4c31
   React-jsiexecutor: 93bd528844ad21dc07aab1c67cb10abae6df6949
   React-jsinspector: 58aef7155bc9a9683f5b60b35eccea8722a4f53a
-  react-native-camera: fc2e20b8ae9da6a84ca34c5e169c025f4df93f16
+  react-native-camera: 5e765cc9841e3a48ae27b3ab252c9f32b41c3390
+  react-native-cameraroll: 717193a0427fd0db78d3f10385a008fcc102213c
+  react-native-safe-area-context: 86612d2c9a9e94e288319262d10b5f93f0b395f5
+  react-native-slider: b733e17fdd31186707146debf1f04b5d94aa1a93
   React-RCTActionSheet: 89a0ca9f4a06c1f93c26067af074ccdce0f40336
   React-RCTAnimation: 1bde3ecc0c104c55df246eda516e0deb03c4e49b
   React-RCTBlob: a97d378b527740cc667e03ebfa183a75231ab0f0
@@ -545,9 +563,9 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
-  RNGestureHandler: 7a5833d0f788dbd107fbb913e09aa0c1ff333c39
+  RNGestureHandler: e66feb0fda7da74ea6a3094656b3c1efe05f5c07
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
-  RNScreens: 3d682bcaba69a4f8e55543d90818704f34338db1
+  RNScreens: b6c9607e6fe47c1b6e2f1910d2acd46dd7ecea3a
   RNVectorIcons: f67a1abce2ec73e62fe4606e8110e95a832bc859
   UMAppLoader: 515d02d30e29cf05bbe58f77c59f896840cc5895
   UMBarCodeScannerInterface: 77a5bebdc21106979a363bb057c4fbb46aacc171

@@ -1,12 +1,26 @@
 {
   "main": "index.js",
   "scripts": {
-    "android": "npx react-native run-android",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "cross-env-shell jest",
     "ios": "npx pod-install && npx react-native run-ios --simulator='iPhone 12'",
-    "start": "react-native start",
-    "test": "jest"
+    "ios:device": "npx pod-install && npx react-native run-ios --device",
+    "android": "npx react-native run-android --variant=Debug",
+    "android:debug": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "clearcache": "watchman watch-del-all && react-native start --reset-cache",
+    "cleangradle": "cd android && ./gradlew clean",
+    "build:android:debug": "./gradlew assembleDebug",
+    "build:android:release": "./gradlew assembleRelease -x bundleReleaseJsAndAssets",
+    "lint": "cross-env-shell tslint --project ./tsconfig.json",
+    "lint:fix": "cross-env-shell tslint --fix --project ./tsconfig.json",
+    "android:devices": "adb devices",
+    "ios:devices": "xcrun instruments -s devices",
+    "shake": "adb shell input keyevent 82",
+    "podinstall": "npx pod-install",
+    "checkTs": "tsc --noEmit"
   },
   "dependencies": {
+    "@react-native-community/cameraroll": "^4.0.2",
     "@react-native-community/slider": "^3.0.3",
     "expo": "~40.0.1",
     "expo-splash-screen": "~0.9.0",
