@@ -1,8 +1,9 @@
 import "react-native-gesture-handler";
 import { registerRootComponent } from "expo";
 
-// import App from './App';
-import App from "./src/App";
+// import App from './App'; // Basic camera features
+
+import App from "./src/App"; // Advanced camera features
 
 // registerRootComponent calls AppRegistry.registerComponent('main', () => App);
 // It also ensures that whether you load the app in the Expo client or in a native build,
